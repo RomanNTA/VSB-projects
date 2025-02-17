@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #e6f7ff !important;
+  font-family: "Poppins" !important;
+  color: #3498db !important;
+}
+/* Návrh 1: Klidný a profesionální
+
+Pozadí: #f0f8ff (Alice Blue) - Velmi světle modrá, téměř bílá, působí čistě a vzdušně.
+Formulář: #ffffff (White) - Klasická bílá pro jasný a čistý vzhled formuláře.
+Písmo: #2f4f4f (DarkSlateGray) - Tmavě šedá, velmi dobře čitelná na bílém pozadí.
+Návrh 2: Moderní a energický
+
+Pozadí: #e6f7ff (Velmi světle modrá) - Jemný, moderní vzhled.
+Formulář: #ffffff (White) - Čistý a jasný formulář.
+Písmo: #3498db (Belize Hole) - Sytá modrá, která upoutá pozornost a dodá energii.
+Důležité poznámk */
+
+button,
+input {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+}
+
+button {
+  letter-spacing: 1px;
+  /* box-shadow: inset 0px 0px 2px rgb(156, 184, 187); */
+  box-shadow: 2px 2px 2px 3px rgba(142, 142, 142, 0.2);
+}
+
+button:focus {
+  box-shadow: 0px 0px 0px 0px rgba(57, 57, 57, 0.2);
+  transition: box-shadow 0.5s;
+}
+
+/* ------------------ testovací prvky ------------------- */
+.b {
+  border: 2px solid red;
+}
+
+.c {
+  border: 2px solid lime;
+}
+
+.d {
+  border: 2px solid purple;
+}
+
+.e {
+  border: 2px solid blue;
+}
+
+.f {
+  border: 2px solid yellow;
+}
+/* -------------------  ------------------------- */
+
+.box-shadow {
+  /*  box-shadow: 0px 0px 30px #616161; */
+  box-shadow: inset 0px 0px 8px #a8a8a8;
+}
+
+/* .page-container {
+  border-radius: 40px;
+
+  display: flex;
+  flex-direction: column;
+
+  height: 60vh;
+  min-height: 50vh;
+
+  width: 50%;
+  align-items: center;
+
+  box-shadow: inset 0px 0px 20px rgb(156, 184, 187);
+}
+ */
+
+.nta-body-container {
+  background-color: #ffffff !important;
+  color: #3498db !important;
+}
+
+.table-height {
+  height: 280px !important;
+  overflow-y: scroll !important;
+}
