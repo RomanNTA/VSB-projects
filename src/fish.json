@@ -1,0 +1,28 @@
+{
+  "fish": [
+    {
+      "id": 0,
+      "name": "Pancéřníček panda",
+      "species": "Pancéřníci",
+      "size": 1
+    },
+    {
+      "id": 1,
+      "name": "Čichavec pyskatý XL",
+      "species": "Čichavci",
+      "size": 1
+    },
+    {
+      "id": 2,
+      "name": "Razbora skvrnoocasá",
+      "species": "Razbory",
+      "size": 2
+    },
+    {
+      "id": 3,
+      "name": "Betta splendens",
+      "species": "Betta bojovnice",
+      "size": 2
+    }
+  ]
+}
