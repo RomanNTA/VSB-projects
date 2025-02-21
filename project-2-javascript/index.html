@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- https://projects.sliva-roman.cz/project1/ -->
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="./scss/custom.css" rel="stylesheet" />
+  <title>Java Script</title>
+</head>
+
+<body>
+  <div class="container p-0 nta-h d-flex align-items-center">
+    <div class="w-100 m-0 nta-border rounded-4 p-4 bg-color">
+      <div class="rounded-4 col-12 ">
+        <h1 class="py-3 d-flex justify-content-center">
+          Zde můžete objednat nejlepší pochoutky pro vašeho mazlíčka
+        </h1>
+      </div>
+      <div class="row d-flex col-12">
+        <!-- menu -->
+        <div class="col-6 d-flex align-items-center">
+          <div class="w-100">
+            <label for="elVyberJidla" class="form-label mt-4">Výběr pochoutky</label>
+            <select class="form-select" id="elVyberJidla" chosen="{width: '100%'}">
+              <option value="0">Psí žrádlo 150 Kč/kg</option>
+              <option value="1">Kočičí žrádlo 120 Kč/kg</option>
+              <option value="2">Žrádlo pro rybičky 50 Kč/kg</option>
+              <option value="3">Žrádlo pro tygra 800 Kč/kg</option>
+            </select>
+          </div>
+        </div>
+        <!-- množství -->
+        <div class="col-6 py-2">
+          <div>
+            <label class="col-form-label mt-4" for="elInMnozstvi">Objednané množství</label>
+            <input type="number" class="form-control" placeholder="Množství" id="elInMnozstvi" min="0" />
+          </div>
+          <!-- elCelkemKc -->
+          <div>
+            <label class="form-label mt-4" for="elCelkemKc">Celková cena</label>
+            <input class="form-control" id="elCelkemKc" type="number" placeholder="Celková cena bude zde ..."
+              readonly="" min="0" />
+          </div>
+        </div>
+      </div>
+
+      <div class="row py-4">
+        <!-- spec. požadavky -->
+        <div class="col-12 d-flex">
+          <div class="col-6 ">
+            <h3 class="">Speciální požadavky</h3>
+            <!-- elChBio -->
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="elChBio" />
+              <label class="form-check-label" for="elChBio">
+                Bio kvalita (+ 30 procent ze základní ceny)
+              </label>
+            </div>
+            <!-- elChExtra -->
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="elChExtra" />
+              <label class="form-check-label" for="elChExtra">
+                Extra premium kvalita (+50 procent ze základní ceny krmiva)
+              </label>
+            </div>
+            <!-- elChLevne -->
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="elChLevne" />
+              <label class="form-check-label" for="elChLevne">
+                Extra nekvalita pro chudé : -D (-15 procent ze základní ceny
+                krmiva
+              </label>
+            </div>
+            <!-- elChDarek -->
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="elChDarek" />
+              <label class="form-check-label" for="elChDarek">
+                Dárkové balení (+500 Kč)
+              </label>
+            </div>
+          </div>
+          <!-- elDopOsobni -->
+          <div class="col-6">
+            <h3 class="">Doprava</h3>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="nameDoprava" id="elDopOsobni" value="doprava-osobni" />
+              <label class="form-check-label" for="elDopOsobni">
+                Osobní odběr (bez příplatku)
+              </label>
+            </div>
+            <!-- elDopKuryr -->
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="nameDoprava" id="elDopKuryr" value="doprava-kuryr" />
+              <label class="form-check-label" for="elDopKuryr">
+                Firemní kurýr (+10 procent z aktuální ceny krmiva – tj. již
+                včetně volitelných vlastností)
+              </label>
+            </div>
+            <!-- elDopPosta -->
+            <div class="form-check disabled">
+              <input class="form-check-input" type="radio" name="nameDoprava" id="elDopPosta" value="doprava-posta" />
+              <label class="form-check-label" for="elDopPosta">
+                Česká pošta (+250 Kč)
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- elInUtrata -->
+
+      <div class="row d-flex">
+        <h4 class="col-12">Zde Vám můžeme vypočítat kalkulaci útraty ?</h4>
+        <div class="col-6">
+          <div class="">
+            <label class="form-label mt-4" for="elInUtrata">Výpočet ... kolik Vám zůstane</label>
+            <input type="number" value="" placeholder="Kolik vložíte ?" class="form-control" id="elInUtrata" />
+          </div>
+          <p class="" id="elOdpoved"></p>
+        </div>
+        <!-- elInEmail -->
+        <div class="col-6">
+          <label for="elInEmail" class="form-label mt-4">Email address</label>
+          <input type="email" class="form-control" id="elInEmail" aria-describedby="emailHelp"
+            placeholder="Zde vložte validní email." />
+          <p id="emailHelp" class="form-text text-muted">
+            <span id="emailMessage"></span>Váš e-mail nikdy s nikým
+            nesdílíme.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="d-flex">
+        <div class="row col-10">
+          <h4 id="resMsg" class="success">&nbsp</h4>
+        </div>
+        <div class="col-2 d-flex justify-content-end">
+          <button type="button" class="btn btn-info" id="elBtnOdeslat">
+            Odeslat objednávku
+          </button>
+        </div>
+      </div>
+
+
+
+    </div>
+
+    <script src="./js/scr.js"></script>
+</body>
+
+</html>
