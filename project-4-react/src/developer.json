@@ -1,0 +1,28 @@
+{
+  "developer": [
+    {
+      "id": 0,
+      "name": "Petr",
+      "surname": "Zahradník",
+      "level": 1
+    },
+    {
+      "id": 1,
+      "name": "Josef",
+      "surname": "Pleskač",
+      "level": 2
+    },
+    {
+      "id": 2,
+      "name": "Petra",
+      "surname": "Chytrá",
+      "level": 2
+    },
+    {
+      "id": 3,
+      "name": "Beata",
+      "surname": "Pustá",
+      "level": 1
+    }
+  ]
+}
