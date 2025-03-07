@@ -8,7 +8,7 @@ $send = isset($_POST["send"]);
 $book = getObjFromPost();
 if ($send) {
     $repo = new BooksRepository();
-    if (!$repo->createBook($book)) {
+    if ($repo->createBook($book)) {
         $resultDiv = <<<END
             <div class="alert alert-dismissible alert-success my-5">
             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
@@ -27,10 +27,10 @@ END;
 }
 ?>
 <?php include '_header.php'; ?>
-<div class="container">
-    <h1 class="display-5 mt-5 my-3">Vložení nové knihy</h1>
 
-    <form action="/index.php" method="post">
+    <h1 class="display-5 mt-5 my-3 fs-2">Vložení nové knihy</h1>
+
+    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
         <div class="mb-2">
             <label class="form-label" for="isbn">ISBN</label>
             <input class="form-control" type="text" name="isbn" id="isbn" value="" required>

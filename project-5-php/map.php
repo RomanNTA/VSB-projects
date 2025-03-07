@@ -29,3 +29,41 @@ function getObjFromPost()
     );
 }
 //------------------------------------------------------------------------
+function createDivBook(Book $book)
+{
+    $name = htmlspecialchars($book->name);
+    $surrname = htmlspecialchars($book->surrname);
+    $title = htmlspecialchars($book->title);
+    $isbn = htmlspecialchars($book->isbn);
+    $descr = htmlspecialchars($book->descr);
+
+    return <<<END
+    <div class="row pb-2">
+        <div class="d-flex pb-3 m-0 n-border">
+
+            <div class="col-12 col-md-2 px-3">
+                <img src="{$book->url}" class="object-fit-contain img-fluid"  alt="obrázek knihy '{$title}'">
+            </div>
+
+            <div class="col-12 col-md-10">
+                <div class="col-12">
+                    <strong>Jméno a příjmení autora: </strong>
+                    {$name}&nbsp{$surrname}
+                </div>
+                <div class="col-12">
+                    <strong>Názv knihy: </strong>
+                    <span class="font-weight-bold">{$title}</span>
+                </div>
+                <div class="col-12">
+                    <small>ISBN : {$isbn}</small>
+                </div>
+                <div class="col-12">
+                    <strong>Popis knihy: </strong>
+                    <p>{$descr}</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+END;
+}
