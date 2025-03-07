@@ -1,7 +1,4 @@
 <?php
-
-use Dom\XPath;
-
 header("Expires: Mon, 01 Jul 2024 05:00:00 GMT");
 header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
 header("Cache-Control: no-cache, must-revalidate");  // HTTP/1.1
