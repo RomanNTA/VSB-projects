@@ -1,0 +1,14 @@
+﻿@using AppNetCoreMVC_SchollSystem.DTO
+@model StudentDTO
+
+<h1>Delete student ?</h1>
+
+<div class="border border-dark rounded-3 border-2 p-3">   
+    <h5>Jméno a příjmení : @Model.FirstName, @Model.LastName</h5>
+    <p>Datum narození : @Model.DateOfBirth</p>
+    <p>Id : @Model.Id</p>
+
+    <form method="post" class="">
+        <button type="submit" class="btn btn-danger mx-3" asp-action="Delete" asp-route-id="@Model.Id">Delete</button>
+    </form>
+</div>

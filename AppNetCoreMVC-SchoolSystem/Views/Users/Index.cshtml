@@ -1,0 +1,38 @@
+﻿@using AppNetCoreMVC_SchollSystem.ViewModel
+@model IEnumerable<AppUser>
+
+
+<h1>All Users</h1>
+@*tlačítko pro vytvoření nového uživatele*@
+<a asp-action="Create" class="btn btn-outline-info text-black mt-5 mb-2 fs-5">Create a User</a>
+@*tabulka bude mít vyznačené okraje*@
+<table class="table table-sm table-bordered">
+    @*definice prvního řádku tabulky s nadpisy sloupců (budou tučně)*@
+    @*<tr> = table row*@
+    <tr>
+        @*<th> = table header*@
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    @*rozdělení vlastností uživatele do jednotlivých buněk tabulky - držíme se schématu z table headeru - id, name, email, tlačítka pro update a delete*@
+    @foreach (AppUser user in Model) {
+        <tr>
+            <td>@user.Id</td>  @*<td> = table data*@
+            <td>@user.UserName</td>
+            <td>@user.Email</td>
+            <td class="text-center">
+                <a class="btn btn-sm btn-outline-primary" asp-action="Edit" asp-route-id="@user.Id">Edit</a>
+            </td>
+            <td class="text-center">
+                <form asp-action="Delete" asp-route-id="@user.Id" method="post">
+                    <button type="submit" class="btn btn-sm btn-outline-danger">
+                        Delete
+                    </button>
+                </form>
+            </td>
+        </tr>
+    }
+</table>

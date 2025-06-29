@@ -1,0 +1,29 @@
+﻿@using AppNetCoreMVC_SchollSystem.DTO
+
+@model IEnumerable<GradeDTO>
+
+<h1>List of all grades</h1>
+
+    @foreach (var item in Model) {
+
+    <div title="@item.Id" class="border border-1 border-dark p-2 m-1 rounded-bottom ">
+        <p class="py-2 fs-3">@item.StudentFullName</p>
+            <p>@item.Topic - @item.Mark<br /> @item.Date.ToShortTimeString()</p>
+
+        @if (User.Identity.IsAuthenticated &&
+       (User.IsInRole("Admin") || User.IsInRole("Teacher"))) {
+			<div class=" d-flex justify-content-start py-2">
+
+            <a class="btn btn-warning mx-3" asp-controller="Grade" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+            <form method="post" asp-action="Delete">
+                <button type="submit" class="btn btn-warning mx-3" asp-controller="Grade" asp-action="Delete" asp-route-id="@item.Id">Delete</button>
+            </form>
+            </div>
+        }
+        </div>
+
+    }
+<hr/>
+<div>
+    <a class="btn btn-success" asp-controller="Grade" asp-action="Create">Vytvořit nové</a>
+</div>
